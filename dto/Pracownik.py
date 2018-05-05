@@ -14,6 +14,7 @@ Pensje = {
     StanowiskoPracownika.PROFESOR: 4
 }
 
+
 class Pracownik:
     def __init__(self, stanowisko, dziedzina):
         self.stanowisko = stanowisko

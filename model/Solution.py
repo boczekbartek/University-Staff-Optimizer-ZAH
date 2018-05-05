@@ -23,18 +23,18 @@ class Solution:
         jakosc = mnoznik_jakosci * Jakosc[pracownik.stanowisko]
         return jakosc
 
-    def funkcja_jakosci(self, przedmioty, pracownicy):
+    def funkcja_jakosci(self):
         jakosc = 0
-        for (przedmiot, pracownik) in self.mapa_dopasowan_przedmiot_pracownik:
+        for (przedmiot, pracownik) in self.mapa_dopasowan_przedmiot_pracownik.items():
             jakosc = jakosc + self.oblicz_jakosc_pracownika(pracownik, przedmiot)
         return jakosc
 
-    def funkcja_kosztu(self, przedmioty, pracownicy):
+    def funkcja_kosztu(self):
         koszt = 0
         for pracownik in set(self.mapa_dopasowan_przedmiot_pracownik.values()):
             koszt = koszt + pracownik.pensja
-
+        return koszt
+    
     # funkcja optymalizowana, to pewnie do jakiegos optymalizatora trzeba machnac
-    def fun_celu(self, jakosc, koszt):
-        return self.alfa * jakosc + self.beta * koszt
-
+    def funkcja_celu(self):
+        return self.alfa * self.funkcja_jakosci() + self.beta * self.funkcja_kosztu()

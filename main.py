@@ -4,6 +4,7 @@ from enumy import *
 from input_data import *
 
 
-if __name__ == '__main__':
+def test_funkcji_celu():
     a = Solution(alfa=2, beta=2, wsp_pasujacej_jakosci=1, wsp_niepasujacej_jakosci=0.1)
-    print(a.oblicz_jakosc_pracownika(Pracownik(StanowiskoPracownika.PROFESOR, Dziedzina.POL), Przedmioty[0]))
+    a.dodaj_dopasowanie(przedmiot=Przedmioty[0], pracownik=Pracownik(StanowiskoPracownika.PROFESOR, Dziedzina.POL))
+    assert a.funkcja_celu() == 16
