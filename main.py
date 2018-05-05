@@ -1,6 +1,6 @@
 from dto import *
 from model import Solution
-
+from enumy import *
 
 # wartosci wejsciowe
 max_working_hours = 140  # maksymalna liczba godzin dla pracownika
