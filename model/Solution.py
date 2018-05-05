@@ -1,4 +1,5 @@
 from dto import *
+import numpy as np
 
 
 class Solution:
@@ -39,4 +40,20 @@ class Solution:
     def funkcja_celu(self):
         return self.alfa * self.funkcja_jakosci() + self.beta * self.funkcja_kosztu()
 
-    # def parse_input_data(self, przedmioty, maksymalny_budzet):
+    def parse_input_data(self, przedmioty, pracownicy) -> np.array:
+        """
+        todo
+        :param przedmioty:
+        :param pracownicy:
+        :return: wartosc poczatkowa -
+                randomowa macierz z wierszami (pracownik.id) x (przedmiot.nazwa + przedmiot.typ_jednostki)
+        """
+        pass
+
+    def optimize_scenario(self, encoded_array: np.array):
+        """
+        todo
+        :param encoded_array: losowy scenariusz dopasowania
+        :return: wartosc funkcji celu
+        """
+        return optymalizator.optimize(encoded_array)

@@ -4,3 +4,6 @@ class Przedmiot:
         self.typ = typ
         self.dziedzina = dziedzina
         self.nazwa = nazwa
+
+    def get_id(self):
+        return self.nazwa + self.dziedzina
