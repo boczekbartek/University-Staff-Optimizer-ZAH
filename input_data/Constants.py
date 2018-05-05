@@ -2,7 +2,6 @@ from dto import *
 from enumy import *
 
 # wartosci wejsciowe
-max_working_hours = 140  # maksymalna liczba godzin dla pracownika
 max_budget = 100000  # maksymalny budzet uczelni
 
 Przedmioty = [
