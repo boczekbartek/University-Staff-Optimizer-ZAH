@@ -3,7 +3,7 @@ import numpy as np
 
 
 class Solution:
-    def __init__(self, alfa, beta, wsp_pasujacej_jakosci, wsp_niepasujacej_jakosci):
+    def __init__(self, wsp_pasujacej_jakosci, wsp_niepasujacej_jakosci, alfa=1, beta=-1):
         self.wsp_pasujacej_jakosci = wsp_pasujacej_jakosci
         self.wsp_niepasujacej_jakosci = wsp_niepasujacej_jakosci
         self.beta = beta

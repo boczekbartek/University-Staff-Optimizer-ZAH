@@ -22,3 +22,8 @@ class Pracownik:
         self.pensja = Pensje[stanowisko]
         self.max_godzin = max_working_hours
         self.id = id
+
+    def to_dict(self):
+        return dict(stanowisko=self.stanowisko.value,
+                    dziedzina=self.dziedzina.value,
+                    id=self.id)

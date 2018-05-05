@@ -1,6 +1,7 @@
 from dto import *
 from enumy import *
 
+import pandas as pd
 # wartosci wejsciowe
 max_budget = 100000  # maksymalny budzet uczelni
 
@@ -26,3 +27,41 @@ Pracownicy = [
     Pracownik(StanowiskoPracownika.PROFESOR, Dziedzina.FIZ, 7),
     Pracownik(StanowiskoPracownika.PROFESOR, Dziedzina.MAT, 8)
 ]
+
+
+def save_to_csv(przedmioty, pracownicy):
+    df_pracownicy = pd.DataFrame([pracownik.to_dict() for pracownik in pracownicy])
+    df_przedmioty = pd.DataFrame([przedmiot.to_dict() for przedmiot in przedmioty])
+
+    df_pracownicy.to_csv("Pracownicy.csv", index=False)
+    df_przedmioty.to_csv("Przedmioty.csv", index=False)
+
+
+def load_pracownicy(filename):
+    df = pd.read_csv(filename)
+    res = []
+
+    for _, pracownik in df.iterrows():
+        res.append(
+            Pracownik(dziedzina=Dziedzina(pracownik.dziedzina),
+                      stanowisko=StanowiskoPracownika(pracownik.stanowisko),
+                      id=pracownik.id)
+        )
+
+    return res
+
+
+def load_przedmioty(filename):
+    df = pd.read_csv(filename)
+    res = []
+
+    for _, przedmiot in df.iterrows():
+        res.append(
+            Przedmiot(dziedzina=Dziedzina(przedmiot.dziedzina),
+                      liczba_godzin=int(przedmiot.liczba_godzin),
+                      nazwa=przedmiot.nazwa,
+                      typ=TypJednostkiDyd(przedmiot.typ)
+                      )
+        )
+
+    return res
