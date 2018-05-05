@@ -36,13 +36,12 @@ class Solution:
             koszt = koszt + pracownik.pensja
         return koszt
 
-    # funkcja optymalizowana, to pewnie do jakiegos optymalizatora trzeba machnac
     def funkcja_celu(self):
         return self.alfa * self.funkcja_jakosci() + self.beta * self.funkcja_kosztu()
 
+    # TODO
     def parse_input_data(self, przedmioty, pracownicy) -> np.array:
         """
-        todo
         :param przedmioty:
         :param pracownicy:
         :return: wartosc poczatkowa -
@@ -50,9 +49,9 @@ class Solution:
         """
         pass
 
+    # TODO
     def optimize_scenario(self, encoded_array: np.array):
         """
-        todo
         :param encoded_array: losowy scenariusz dopasowania
         :return: wartosc funkcji celu
         """
