@@ -16,8 +16,9 @@ Pensje = {
 
 
 class Pracownik:
-    def __init__(self, stanowisko, dziedzina):
+    def __init__(self, stanowisko, dziedzina, id):
         self.stanowisko = stanowisko
         self.dziedzina = dziedzina
         self.pensja = Pensje[stanowisko]
         self.max_godzin = max_working_hours
+        self.id = id

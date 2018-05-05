@@ -15,3 +15,14 @@ Przedmioty = [
     Przedmiot(nazwa="ZPI", dziedzina=Dziedzina.FIZ, typ=TypJednostkiDyd.LAB, liczba_godzin=3),
     Przedmiot(nazwa="ZPI", dziedzina=Dziedzina.FIZ, typ=TypJednostkiDyd.WYKLAD, liczba_godzin=2)
 ]
+
+Pracownicy = [
+    Pracownik(StanowiskoPracownika.PROFESOR, Dziedzina.POL, 1),
+    Pracownik(StanowiskoPracownika.PROFESOR, Dziedzina.CHEM, 2),
+    Pracownik(StanowiskoPracownika.PROFESOR, Dziedzina.FIZ, 3),
+    Pracownik(StanowiskoPracownika.PROFESOR, Dziedzina.MAT, 4),
+    Pracownik(StanowiskoPracownika.PROFESOR, Dziedzina.POL, 5),
+    Pracownik(StanowiskoPracownika.PROFESOR, Dziedzina.CHEM, 6),
+    Pracownik(StanowiskoPracownika.PROFESOR, Dziedzina.FIZ, 7),
+    Pracownik(StanowiskoPracownika.PROFESOR, Dziedzina.MAT, 8)
+]

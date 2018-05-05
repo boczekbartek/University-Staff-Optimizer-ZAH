@@ -34,7 +34,9 @@ class Solution:
         for pracownik in set(self.mapa_dopasowan_przedmiot_pracownik.values()):
             koszt = koszt + pracownik.pensja
         return koszt
-    
+
     # funkcja optymalizowana, to pewnie do jakiegos optymalizatora trzeba machnac
     def funkcja_celu(self):
         return self.alfa * self.funkcja_jakosci() + self.beta * self.funkcja_kosztu()
+
+    # def parse_input_data(self, przedmioty, maksymalny_budzet):
