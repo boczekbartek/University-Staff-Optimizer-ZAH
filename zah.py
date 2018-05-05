@@ -1,24 +1,4 @@
-from enum import Enum
-
-
-# model
-class StanowiskoPracownika(Enum):
-    DOKTORANT = 1
-    ADIUNKT = 2
-    PROFESOR = 3
-
-
-class TypJednostkiDyd(Enum):
-    WYKLAD = 1
-    LAB = 2
-    PROJ = 3
-
-
-class Dziedzina(Enum):
-    MAT = 1
-    FIZ = 2
-    CHEM = 3
-    POL = 4
+from enumy import *
 
 
 class Przedmiot:
@@ -113,15 +93,15 @@ max_working_hours = 140  # maksymalna liczba godzin dla pracownika
 max_budget = 100000  # maksymalny budzet uczelni
 
 Przedmioty = [
-    Przedmiot(nazwa="POBO", dziedzina="infa", typ="laby", liczba_godzin=4),
-    Przedmiot(nazwa="POBO", dziedzina="infa", typ="wyklad", liczba_godzin=2),
-    Przedmiot(nazwa="SKM", dziedzina="matma", typ="laby", liczba_godzin=4),
-    Przedmiot(nazwa="ZAH", dziedzina="chemia", typ="wyklad", liczba_godzin=3),
-    Przedmiot(nazwa="ZAH", dziedzina="chemia", typ="laby", liczba_godzin=5),
-    Przedmiot(nazwa="SNR", dziedzina="chemia", typ="laby", liczba_godzin=2),
-    Przedmiot(nazwa="SNR", dziedzina="chemia", typ="wyklad", liczba_godzin=4),
-    Przedmiot(nazwa="ZPI", dziedzina="fizyka", typ="laby", liczba_godzin=3),
-    Przedmiot(nazwa="ZPI", dziedzina="fizyka", typ="wyklad", liczba_godzin=2)
+    Przedmiot(nazwa="POBO", dziedzina=Dziedzina.POL, typ=TypJednostkiDyd.LAB, liczba_godzin=4),
+    Przedmiot(nazwa="POBO", dziedzina=Dziedzina.POL, typ=TypJednostkiDyd.WYKLAD, liczba_godzin=2),
+    Przedmiot(nazwa="SKM", dziedzina=Dziedzina.CHEM, typ=TypJednostkiDyd.LAB, liczba_godzin=4),
+    Przedmiot(nazwa="ZAH", dziedzina=Dziedzina.CHEM, typ=TypJednostkiDyd.WYKLAD, liczba_godzin=3),
+    Przedmiot(nazwa="ZAH", dziedzina=Dziedzina.CHEM, typ=TypJednostkiDyd.LAB, liczba_godzin=5),
+    Przedmiot(nazwa="SNR", dziedzina=Dziedzina.CHEM, typ=TypJednostkiDyd.LAB, liczba_godzin=2),
+    Przedmiot(nazwa="SNR", dziedzina=Dziedzina.CHEM, typ=TypJednostkiDyd.WYKLAD, liczba_godzin=4),
+    Przedmiot(nazwa="ZPI", dziedzina=Dziedzina.FIZ, typ=TypJednostkiDyd.LAB, liczba_godzin=3),
+    Przedmiot(nazwa="ZPI", dziedzina=Dziedzina.FIZ, typ=TypJednostkiDyd.WYKLAD, liczba_godzin=2)
 ]
 
 # wartosci wyjsciowe
