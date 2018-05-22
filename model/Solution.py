@@ -36,7 +36,7 @@ class Solution:
             koszt = koszt + pracownik.pensja
         return koszt
 
-    def funkcja_celu(self):
+    def funkcja_celu(self) -> float:
         return self.alfa * self.funkcja_jakosci() + self.beta * self.funkcja_kosztu()
 
     # TODO
@@ -55,4 +55,5 @@ class Solution:
         :param encoded_array: losowy scenariusz dopasowania
         :return: wartosc funkcji celu
         """
-        return optymalizator.optimize(encoded_array)
+        # return optymalizator.optimize(encoded_array)
+        pass

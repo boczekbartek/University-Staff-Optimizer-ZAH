@@ -33,18 +33,24 @@ if __name__ == '__main__':
 
     dopasowanie = np.array([
         # ZAH_LAB ZAH_WYKLAD SOI_LAB SOI_WYKKLAD
-        [1, 0, 1, 0, 0, 0],
-        [0, 1, 1, 0, 1, 0],
-        [1, 0, 1, 0, 0, 0],
-        [1, 0, 1, 0, 0, 0],   # ograniczenie
-        [0, 0, 0, 0, 0, 0],
+        [1, 0, 0, 0],
+        [0, 1, 0, 0],
+        [0, 0, 1, 0],
+        [0, 0, 0, 1],   # ograniczenie
     ])
 
 
     def fun_celu(dopasowanie: np.array) -> float:
         # trzeba zrobic jakas mape indeks kolumny -> kod przedmiotu i indeks wiersza -> kod pracownika
-        mapa_przedmiotow = {}
-        mapa_pracownikow = {}
+        mapa_przedmiotow = {1: Przedmiot(nazwa="POBO", dziedzina=Dziedzina.POL, typ=TypJednostkiDyd.LAB, liczba_godzin=4),
+                            2: Przedmiot(nazwa="POBO", dziedzina=Dziedzina.POL, typ=TypJednostkiDyd.WYKLAD, liczba_godzin=2),
+                            3: Przedmiot(nazwa="SKM", dziedzina=Dziedzina.CHEM, typ=TypJednostkiDyd.LAB, liczba_godzin=4),
+                            4: Przedmiot(nazwa="ZAH", dziedzina=Dziedzina.CHEM, typ=TypJednostkiDyd.WYKLAD, liczba_godzin=3)}
+        mapa_pracownikow = {1: Pracownik(StanowiskoPracownika.PROFESOR, Dziedzina.POL, 1),
+                            2: Pracownik(StanowiskoPracownika.PROFESOR, Dziedzina.CHEM, 2),
+                            3: Pracownik(StanowiskoPracownika.PROFESOR, Dziedzina.FIZ, 3),
+                            4: Pracownik(StanowiskoPracownika.PROFESOR, Dziedzina.MAT, 4)}
+
         model = Solution(alfa=2, beta=2, wsp_pasujacej_jakosci=1, wsp_niepasujacej_jakosci=0.1)
         for y, row in enumerate(dopasowanie):
             for x, cell in enumerate(row):
