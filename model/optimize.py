@@ -54,5 +54,6 @@ if __name__ == '__main__':
         model = Solution(alfa=2, beta=2, wsp_pasujacej_jakosci=1, wsp_niepasujacej_jakosci=0.1)
         for y, row in enumerate(dopasowanie):
             for x, cell in enumerate(row):
-                model.dodaj_dopasowanie(mapa_przedmiotow[x], mapa_pracownikow[y])
+                if cell == 1:
+                    model.dodaj_dopasowanie(mapa_przedmiotow[x], mapa_pracownikow[y])
         return model.funkcja_celu()
