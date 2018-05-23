@@ -3,7 +3,8 @@ from enumy import *
 
 import pandas as pd
 # wartosci wejsciowe
-max_budget = 100000  # maksymalny budzet uczelni
+max_budget = 8  # maksymalny budzet uczelni
+max_czas = 8
 
 Przedmioty = [
     Przedmiot(nazwa="POBO", dziedzina=Dziedzina.POL, typ=TypJednostkiDyd.LAB, liczba_godzin=4),
