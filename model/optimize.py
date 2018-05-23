@@ -73,6 +73,6 @@ if __name__ == '__main__':
             {'type': 'ineq', 'fun': lambda x: -x[0] - 2 * x[1] + 6},
             {'type': 'ineq', 'fun': lambda x: -x[0] + 2 * x[1] + 2})
 
-    res = minimize(opt_fun, dopasowanie.flatten(), method='SLSQP', tol=1e-6, bounds=bnds)
+    res = minimize(opt_fun, dopasowanie.flatten(), method='SLSQP', tol=1e-6, bounds=bnds, constraints=cons)
 
     print(res.x.reshape(-1, 4))
