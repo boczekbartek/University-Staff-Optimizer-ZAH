@@ -3,7 +3,7 @@ from enumy import *
 
 import pandas as pd
 # wartosci wejsciowe
-max_budget = 8  # maksymalny budzet uczelni
+max_budget = 100  # maksymalny budzet uczelni
 max_czas = 8
 
 Przedmioty = [
