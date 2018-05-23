@@ -69,6 +69,26 @@ if __name__ == '__main__':
 
     opt_fun = partial(de_flatten, columns=4)
     bnds = tuple([(0, 1) for i in range(dopasowanie.shape[0] * dopasowanie.shape[1])])
+
+    def przekroczone_ograniczenie_koszt(matrix):
+        suma = 0
+        for y, row in enumerate(matrix):
+            for x, cell in enumerate(row):
+                if cell != 0:
+                    suma = suma + mapa_pracownikow[y].pensja
+        return suma > max_budget
+
+    def przekroczone_ograniczenie_czas(matrix):
+        for y, row in enumerate(matrix):
+            czas_pracownika = 0
+            for x, cell in enumerate(row):
+                if cell != 0:
+                    czas_pracownika = czas_pracownika + mapa_przedmiotow[x].liczba_godzin
+            if(czas_pracownika > max_czas):
+                return True
+        return False
+
+
     cons = ({'type': 'ineq', 'fun': lambda x: x[0] - 2 * x[1] + 2},
             {'type': 'ineq', 'fun': lambda x: -x[0] - 2 * x[1] + 6},
             {'type': 'ineq', 'fun': lambda x: -x[0] + 2 * x[1] + 2})
